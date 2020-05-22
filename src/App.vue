@@ -1,28 +1,90 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Weather></Weather>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import Weather from "./components/Weather";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  export default {
+    name: "App",
+    components: {
+      Weather,
+    },
+  };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  #app {
+    font-family: "Montserrat", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    background-image: url("./assets/cold.jpg");
+    background-size: cover;
+    background-position: bottom;
+    transition: 0.4s;
+    /* margin-top: 60px; */
+  }
+
+  main {
+    min-height: 100vh;
+    padding: 2rem;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.75)
+    );
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+  }
+
+  .search {
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+
+    input {
+      width: 50%;
+      padding: 1rem;
+
+      color: #fff;
+      text-shadow: 0.15rem 0.15rem 0.15rem #000;
+      font-size: 1.4rem;
+      appearance: none;
+      border: 0.1rem solid #000;
+      border-radius: 1rem 0 1rem 0;
+      outline: none;
+      background: none;
+      background-color: rgba(255, 255, 255, 0.15);
+      transition: 0.3s ease;
+      box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+
+      &::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: #fff;
+      }
+
+      &:focus {
+        border: 0.1rem solid #fff;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+        border-radius: 0 1rem 0 1rem;
+      }
+    }
+  }
 </style>
