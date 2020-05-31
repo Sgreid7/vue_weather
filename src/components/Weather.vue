@@ -1,24 +1,15 @@
 <template>
   <main>
     <div class="search">
-      <input
-        type="text"
-        name="search"
-        placeholder="Search for a city..."
-        autocomplete="off"
-      />
+      <input type="text" name="search" placeholder="Search for a city..." autocomplete="off" />
     </div>
 
     <div class="wrapper">
-      <div class="location">
-        Tampa, FL
-      </div>
-      <div class="date">
-        Thursday May 21, 2020
-      </div>
+      <div class="location">Tampa, FL</div>
+      <div class="date">Thursday May 21, 2020</div>
 
       <div class="weather">
-        <div class="temp">81 degrees</div>
+        <div class="temp">81°</div>
         <div class="climate">Sunny</div>
       </div>
     </div>
@@ -26,15 +17,17 @@
 </template>
 
 <script>
-  export default {
-    name: "weather",
+export default {
+  name: "weather",
 
-    data() {
-      return {
-        api_key: "9d32b0c4372889caf6edfda19dabe8fb",
-      };
-    },
-  };
+  data() {
+    return {
+      api_key: "9d32b0c4372889caf6edfda19dabe8fb",
+      url_base: "https://api.openweathermap.org/data/2.5/"
+    };
+  }
+};
 </script>
 
-<style></style>
+<style>
+</style>
